@@ -149,7 +149,7 @@ bool PatternDetector::findPattern(const std::string& trainFile , const std::stri
 		cv::Mat trainImg = cv::imread(trainFile);
 		prepareForFindPattern(trainImg);
 	}
-	cv::Mat quertyImg = cv::imread(queryFile);
+	cv::Mat queryImg = cv::imread(queryFile);
 	
 	getGray(queryImg, m_grayImg);
 	

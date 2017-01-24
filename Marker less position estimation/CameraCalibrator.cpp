@@ -14,8 +14,8 @@ int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& file
 	std::vector<cv::Point3f> objCorners;
 	std::vector<cv::Point2f> imgCorners;
 
-	for (size_t i = 0; i < boardSize.height; i++){
-		for (size_t j = 0; j < boardSize.width; j++){
+	for (int i = 0; i < boardSize.height; i++){
+		for (int j = 0; j < boardSize.width; j++){
 			objCorners.push_back(cv::Point3f(i, j, 0.0f));
 		}
 	}
@@ -46,7 +46,6 @@ double CameraCalibrator::caliberate(const cv::Size& boardSize, const std::vector
 }
 
 void CameraCalibrator::findPoints_caliberate(const std::vector<std::string>& fileNames, CameraCalibration& calibration){
-	CameraCalibration calibration;
 	findImg_and_ObjPoints(fileNames, CameraCalibrator::boardSize);
 
 	caliberate(CameraCalibrator::boardSize, CameraCalibrator::objPoints, CameraCalibrator::imgPoints, calibration);
