@@ -1,5 +1,8 @@
 #include "PatternDetector.h"
 
+//#ifndef PATTERN_DETECTOR
+//#define PATTERN_DETECTOR
+
 void PatternDetector::getGray(const cv::Mat& inputImg, cv::Mat& grayImg) {
 	cv::cvtColor(inputImg, grayImg, cv::COLOR_RGB2GRAY);
 }
@@ -219,3 +222,5 @@ void PatternDetector::estimatePosition(const Pattern& pattern, const CameraCalib
 		PatternDetector::m_markerPose = m_markerPose;
 	}
 }
+
+//#endif

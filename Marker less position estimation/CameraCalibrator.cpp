@@ -4,6 +4,9 @@
 #define LOADED_ALL
 #endif
 
+//#ifndef CAMERA_CALIBRATOR
+//#define CAMERA_CALIBRATOR
+
 #include "CameraCalibrator.h"
 
 int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& fileNames, const cv::Size& boardSize) {
@@ -50,3 +53,5 @@ void CameraCalibrator::findPoints_caliberate(const std::vector<std::string>& fil
 
 	caliberate(CameraCalibrator::boardSize, CameraCalibrator::objPoints, CameraCalibrator::imgPoints, calibration);
 }
+
+//#endif

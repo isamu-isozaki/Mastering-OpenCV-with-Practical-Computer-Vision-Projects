@@ -3,6 +3,8 @@
 #define LOADED_ALL
 #endif
 
+#ifndef PATTERN
+#define PATTERN
 #include "CameraCalibrator.h"
 
 struct Pattern {//holds the image, list of features and extracted descriptors and 2d 3d correspondents of the intial pattern positions
@@ -15,3 +17,5 @@ struct Pattern {//holds the image, list of features and extracted descriptors an
 	std::vector<cv::Point2f> point2d;
 	std::vector<cv::Point3f> point3d;
 };
+
+#endif

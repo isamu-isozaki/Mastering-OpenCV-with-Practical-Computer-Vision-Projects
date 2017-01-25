@@ -4,10 +4,10 @@
 #define LOADED_ALL
 #endif
 
-#ifndef PATTERN
-#include "PatternDetector.h"
-#define PATTERN
-#endif
+#include "CameraCalibration.cpp"
+#include "CameraCalibrator.cpp"
+#include "Pattern.cpp"
+#include "PatternDetector.cpp"
 
 
 int main(int argc, char** argv) {

@@ -3,8 +3,10 @@
 #include <opencv2\opencv.hpp>
 #endif
 
-#include "CameraCalibration.h"
 
+#ifndef CAMERA_CALIBRATOR
+#define CAMERA_CALIBRATOR
+#include "CameraCalibration.h"
 class CameraCalibrator{
 public:
 	std::vector<std::vector<cv::Point3f>> objPoints;
@@ -22,3 +24,4 @@ private:
 	int success = 0;
 	double reprojectionError = 0.0f;
 };
+#endif

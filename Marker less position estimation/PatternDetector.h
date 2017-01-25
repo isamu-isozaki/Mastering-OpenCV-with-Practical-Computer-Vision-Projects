@@ -3,6 +3,8 @@
 #define LOADED_ALL
 #endif
 
+#ifndef PATTERN_DETECTOR
+#define PATTERN_DETECTOR
 #include "Pattern.h"
 #include "PatternTrackingInfo.h"
 
@@ -51,4 +53,4 @@ private:
 	void makeTrainPattern(const cv::Mat& train, Pattern& pattern, const bool& apply);
 };
 
-
+#endif

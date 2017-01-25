@@ -4,8 +4,11 @@
 #define LOADED_ALL
 #endif
 
+#ifndef PATTERN_INFO
+#define PATTERN_INFO
 class PatternTrackingInfo {
 public:
 	cv::Mat homography;
 	std::vector<cv::Point2f> point2d;
 };
+#endif
