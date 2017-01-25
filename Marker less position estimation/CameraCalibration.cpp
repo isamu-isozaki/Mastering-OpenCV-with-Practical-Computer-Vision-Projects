@@ -8,8 +8,14 @@
 //#define CAMERA_CALIBRATION
 #include "CameraCalibration.h"
 
+CameraCalibration::CameraCalibration() {
+
+}
+
 CameraCalibration::CameraCalibration(const cv::Mat& intrinsic, const cv::Mat& distortion):m_intrinsic(intrinsic), m_distortion(distortion) {
 
 }
+
+
 
 //#endif

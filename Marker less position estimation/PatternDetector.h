@@ -3,8 +3,8 @@
 #define LOADED_ALL
 #endif
 
-#ifndef PATTERN_DETECTOR
-#define PATTERN_DETECTOR
+//#ifndef PATTERN_DETECTOR
+//#define PATTERN_DETECTOR
 #include "Pattern.h"
 #include "PatternTrackingInfo.h"
 
@@ -52,5 +52,3 @@ private:
 	void setMatcher(const int&);//0:BFMatcher with crosscheck, 1:FlannBasedMatcher
 	void makeTrainPattern(const cv::Mat& train, Pattern& pattern, const bool& apply);
 };
-
-#endif

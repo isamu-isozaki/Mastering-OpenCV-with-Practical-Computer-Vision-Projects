@@ -4,11 +4,12 @@
 #endif
 
 
-#ifndef CAMERA_CALIBRATOR
-#define CAMERA_CALIBRATOR
+//#ifndef CAMERA_CALIBRATOR
+//#define CAMERA_CALIBRATOR
 #include "CameraCalibration.h"
 class CameraCalibrator{
 public:
+	CameraCalibrator();
 	std::vector<std::vector<cv::Point3f>> objPoints;
 	std::vector<std::vector<cv::Point2f>> imgPoints;
 	CameraCalibration calibration;
@@ -24,4 +25,4 @@ private:
 	int success = 0;
 	double reprojectionError = 0.0f;
 };
-#endif
+//#endif

@@ -3,6 +3,10 @@
 //#ifndef PATTERN_DETECTOR
 //#define PATTERN_DETECTOR
 
+PatternDetector::PatternDetector() {
+
+}
+
 void PatternDetector::getGray(const cv::Mat& inputImg, cv::Mat& grayImg) {
 	cv::cvtColor(inputImg, grayImg, cv::COLOR_RGB2GRAY);
 }

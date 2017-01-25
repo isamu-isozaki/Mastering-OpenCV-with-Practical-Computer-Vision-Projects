@@ -3,14 +3,12 @@
 #include <opencv2\opencv.hpp>
 #endif
 
-#ifndef CAMERA_CALIBRATION
-#define CAMERA_CALIBRATION
+//#ifndef CAMERA_CALIBRATION
+//#define CAMERA_CALIBRATION
 struct CameraCalibration {
 	CameraCalibration();
-	CameraCalibration(float fx, float fy, float cx, float cy);//(cx, cy) is principal point
-	CameraCalibration(float fx, float fy, float cx, float cy, float distCoeff[4]);
 	CameraCalibration(const cv::Mat&, const cv::Mat&);
 	cv::Mat m_intrinsic;
 	cv::Mat m_distortion;
 };
-#endif
+//#endif

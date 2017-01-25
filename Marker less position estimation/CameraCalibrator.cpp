@@ -9,6 +9,10 @@
 
 #include "CameraCalibrator.h"
 
+CameraCalibrator::CameraCalibrator() {
+
+}
+
 int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& fileNames, const cv::Size& boardSize) {
 	objPoints.clear();
 	imgPoints.clear();
