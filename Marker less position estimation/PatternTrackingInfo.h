@@ -4,6 +4,8 @@
 #define LOADED_ALL
 #endif
 
+//contains homography and the points after they had underwent perspective control
+
 struct PatternTrackingInfo {
 	PatternTrackingInfo();
 	cv::Mat homography;

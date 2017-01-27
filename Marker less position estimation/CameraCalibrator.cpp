@@ -4,16 +4,13 @@
 #define LOADED_ALL
 #endif
 
-//#ifndef CAMERA_CALIBRATOR
-//#define CAMERA_CALIBRATOR
-
 #include "CameraCalibrator.h"
 
 CameraCalibrator::CameraCalibrator() {
 
 }
 
-int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& fileNames, const cv::Size& boardSize) {
+int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& fileNames, const cv::Size& boardSize) {//find points
 	objPoints.clear();
 	imgPoints.clear();
 	inputImgs.clear();
@@ -23,13 +20,13 @@ int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& file
 
 	for (int i = 0; i < boardSize.height; i++){
 		for (int j = 0; j < boardSize.width; j++){
-			objCorners.push_back(cv::Point3f(i, j, 0.0f));
+			objCorners.push_back(cv::Point3f(i, j, 0.0f));//(0,0,0) all the way to (boardSize.height, boardSize.width, 0)
 		}
 	}
 
 	cv::Mat img;
+	cv::namedWindow("showDetection");
 	int success = 0;
-
 	for (size_t i = 0; i < fileNames.size(); i++) {
 		img = cv::imread(fileNames[i], 0);
 		bool found = cv::findChessboardCorners(img, boardSize, imgCorners);
@@ -40,6 +37,8 @@ int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& file
 			inputImgs.push_back(img);
 			if (drawDetection) {
 				cv::drawChessboardCorners(img, boardSize, imgCorners, found);
+				cv::imshow("showDetection", img);
+				cv::waitKey(0);
 			}
 			success++;
 		}
@@ -49,7 +48,7 @@ int CameraCalibrator::findImg_and_ObjPoints(const std::vector<std::string>& file
 
 double CameraCalibrator::caliberate(const cv::Size& boardSize, const std::vector<std::vector<cv::Point3f>>& objPoints, const std::vector<std::vector<cv::Point2f>>& imgPoints, CameraCalibration& caliberation) {
 	std::vector<cv::Mat> rvec, tvec;
-	return cv::calibrateCamera(objPoints, imgPoints, boardSize, caliberation.m_intrinsic, caliberation.m_distortion, rvec, tvec);
+	return cv::calibrateCamera(objPoints, imgPoints, boardSize, caliberation.m_intrinsic, caliberation.m_distortion, rvec, tvec);//get calibration
 }
 
 void CameraCalibrator::findPoints_caliberate(const std::vector<std::string>& fileNames, CameraCalibration& calibration){
@@ -57,5 +56,3 @@ void CameraCalibrator::findPoints_caliberate(const std::vector<std::string>& fil
 
 	caliberate(CameraCalibrator::boardSize, CameraCalibrator::objPoints, CameraCalibrator::imgPoints, calibration);
 }
-
-//#endif
