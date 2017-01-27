@@ -134,7 +134,7 @@ void PatternDetector::makeTrainPattern(const cv::Mat& trainImg, Pattern& pattern
 void PatternDetector::prepareForFindPattern(const cv::Mat& trainImg) {
 	makeTrainPattern(trainImg, m_pattern, true);
 	
-	setMatcher(1);
+	setMatcher(0);
 
 	train(m_pattern);
 }
