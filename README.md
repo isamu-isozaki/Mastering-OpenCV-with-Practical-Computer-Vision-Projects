@@ -11,9 +11,16 @@ and the next 3x3 matrix is its translation from the origin. You may invert it to
 
 #Project 2
 
-Non-rigid facial detection. The algorithm will detect your face and present markers at locations that it detects where your face is present. The training is done by the images provided by the <a href = "https://github.com/StephenMilborrow/muct">MUCT database</a> and I will not claim any right over them.
+Non-rigid facial detection. The algorithm will detect your face and present markers at locations that it detects where your face is present. The training is done by the images provided by the <a href = "https://github.com/StephenMilborrow/muct">MUCT database</a>. Hence it will be required to be downloaded as an addition to this project, I will clarify below.
 <b>Currently working on some bugs where it does not save the annotations to an yml file, it will not fail you in execution as it is currently commented out, if you wish to view it, you can uncomment the section in main.cpp where it is written as</b>
 
 ```
 save_ft<ft_data>("annotation.yml", face_data);//save to yml file
 ```
+<b>To make it work</b>
+<ol>
+<li>Extract muct-landmark-vl.tar.gz and rename the folder it extracted as landmark</li>
+<li>Extract all muct-*-jpg-v1.tar.gz where * is an alphabetic letter into a folder named pictures where the jpg folder encases all the images</li>
+<li>Put the landmark folder and the pictures folder in a folder named muct and put the folder named muct in the same location as the NRFD folder</li>
+<li>Execute main.cpp</li>
+</ol>
