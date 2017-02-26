@@ -1,5 +1,7 @@
 # Mastering-OpenCV-with-Practical-Computer-Vision-Projects
 
+As can be inferred from the title all credit for these projects, so far goes to the book "Mastering OpenCV with Practical Computer Vision Projects"
+
 #Project 1
 
 Marker less position estimation. You will first need to caliberate your camera, yet no worries! You merely need to copy
