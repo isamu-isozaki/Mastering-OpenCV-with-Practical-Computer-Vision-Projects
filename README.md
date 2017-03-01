@@ -14,7 +14,10 @@ and the next 3x3 matrix is its translation from the origin. You may invert it to
 #Project 2
 
 Non-rigid facial detection. The algorithm will detect your face and present markers at locations that it detects where your face is present. The training is done by the images provided by the <a href = "https://github.com/StephenMilborrow/muct">MUCT database</a>. Hence it will be required to be downloaded as an addition to this project, I will clarify below.
-<b>Currently working on some bugs where it does not save the annotations to an yml file, it will not fail you in execution as it is currently commented out, if you wish to view it, you can uncomment the section in main.cpp where it is written as</b>
+
+On successful run, will display an image
+
+<b>Currently working on the detecting and displaying the face model from an image of a face</b>
 
 ```
 save_ft<ft_data>("annotation.yml", face_data);//save to yml file
