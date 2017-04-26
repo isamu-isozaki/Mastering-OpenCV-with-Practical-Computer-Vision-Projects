@@ -1,10 +1,3 @@
-#ifndef OPEN_CV
-#define OPEN_CV
-
-#include <opencv2\opencv.hpp>
-
-#endif
-
 template <class T>
 T load_ft(const char* fname) {//get the data fromfile
 	std::cout << "reading from " + (std::string)fname << std::endl;

@@ -243,7 +243,7 @@ void ft_data::display_img(const int& idx, const int& flags) {
 	cv::namedWindow("display_annotations");
 
 	cv::Mat img = get_image(idx, flags);
-	std::vector<cv::Point2f> points_curr = get_points(idx, bool(flags-2));
+	std::vector<cv::Point2f> points_curr = get_points(idx, (flags%2 ? false: true));
 
 	int type = 0;
 
@@ -253,7 +253,6 @@ void ft_data::display_img(const int& idx, const int& flags) {
 	else {
 		type = CV_8UC3;
 	}
-	std::vector<cv::Scalar> colors = { cv::Scalar(0, 125, 125), cv::Scalar(250, 250, 0), cv::Scalar(0, 0, 250) };//so I will be able to distinguish the texts
 	cv::Mat overlay = cv::Mat::zeros(img.size(), type);
 
 	for (int idx = 0; idx < points_curr.size(); idx++) {
@@ -264,7 +263,7 @@ void ft_data::display_img(const int& idx, const int& flags) {
 		}
 
 
-	    cv::putText(overlay, std::to_string(idx), points_curr[idx], cv::FONT_HERSHEY_PLAIN, 0.5, colors[idx % 3], 0.8);
+		cv::putText(overlay, std::to_string(idx), points_curr[idx], cv::FONT_HERSHEY_PLAIN, 0.5, cv::Scalar(250, 250, 0), 0.8);
 	}
 
 	//cv::circle(overlay, points_curr[19], 5, cv::Scalar(0, 250, 0), 6);
@@ -282,4 +281,8 @@ void ft_data::display_img(const int& idx, const int& flags) {
 	output.release();
 	overlay.release();
 	img.release();
+}
+
+int ft_data::n_images() {
+	return imnames.size();
 }
